@@ -14,10 +14,16 @@
  - Python3
  - requests
  
+如果报错类似于
+```
+requests.exceptions.SSLError: HTTPSConnectionPool(host='10.50.100.35', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: SSLV3_ALERT_ILLEGAL_PARAMETER] sslv3 alert illegal parameter (_ssl.c:1076)')))
+```
+尝试卸载`pyopenssl`再试试
 ```
 python3 -m pip uninstall pyopenssl
-
-
+```
+ 
+```
 λ python3 huaweiSwitchCrack.py
 
   _    _                          _    _____         _ _       _        _____                _
