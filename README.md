@@ -17,7 +17,7 @@
  
 ```
 python3 -m pip install mozdownload
-python3 -m pip uninstall openssl
+python3 -m pip uninstall pyOpenSSL
 
 λ python3 huaweiSwitchCrack.py
 
