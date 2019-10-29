@@ -73,7 +73,7 @@ def checkTargetAlive(url):
             print('[-] Target {0} is dead.'.format(url))
             return False
     except:
-        print('[-] Target {0} is dead.'.format(url))
+        print('[-] Something Wrong With {0}.'.format(url))
         return False
 
 
@@ -105,6 +105,7 @@ def crackSwitch(url):
 
 
 if __name__ == "__main__":
+    urls = []
     print(r"""
   _    _                          _    _____         _ _       _        _____                _    
  | |  | |                        (_)  / ____|       (_) |     | |      / ____|              | |   
@@ -117,7 +118,10 @@ if __name__ == "__main__":
     """)
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "-target", "--targetfile", type=str, help="Load targets file or single target.")
+        "-target",
+        "--targetfile",
+        type=str,
+        help="Load targets file or single target.")
     parser.add_argument(
         "-unamefile",
         "--usernamefile",
@@ -142,7 +146,7 @@ if __name__ == "__main__":
             with open(args.targetfile) as target:
                 urls = target.read().splitlines()
         else:
-            urls = args.targetfile
+            urls.append(args.targetfile)
         '''
         检查是否导入了用户名字典
         '''
@@ -159,6 +163,7 @@ if __name__ == "__main__":
                 PASSWORD_LIST = password.read().splitlines()
         else:
             PASSWORD_LIST = PASSWORD_LIST
+
         print(
             '[i] Load {0} Username(s) and {1} Password(s) For Test {2} Target(s).'
             .format(len(USERNAME_LIST), len(PASSWORD_LIST), len(urls)))
