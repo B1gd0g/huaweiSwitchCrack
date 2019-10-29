@@ -13,11 +13,10 @@
 ## 需要
  - Python3
  - requests
- - mozdownload
  
 ```
-python3 -m pip install mozdownload
-python3 -m pip uninstall pyOpenSSL
+python3 -m pip uninstall pyopenssl
+
 
 λ python3 huaweiSwitchCrack.py
 
